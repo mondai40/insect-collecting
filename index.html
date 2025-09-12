@@ -12,7 +12,48 @@
     <title>Insect Collecting</title>
 </head>
 <body>
-    <header></header>
+    <header class="bg-green-600 sticky top-0 w-full px-4 py-2">
+        <!-- https://getbootstrap.com/docs/4.4/components/navbar/#supported-content を参考にナビバーを作成してください -->
+        <nav class="md:flex md:flex-row items-center">
+            <!-- ブランドロゴ Image and text 画像のURL : https://img.icons8.com/color-glass/344/top-view-bird.png -->
+            <div class="flex flex-row justify-between items-center">
+                <div class="logo flex flex-row justify-start items-center space-x-2">
+                    <img src="https://img.icons8.com/external-vitaliy-gorbachev-flat-vitaly-gorbachev/452/external-bug-gardening-vitaliy-gorbachev-flat-vitaly-gorbachev.png" alt="logo" class="w-[30px]">
+                    <span class="text-xl text-white">Insect Collecting</span>
+                </div>
+            
+                <!-- toggler (ハンバーガーメニューのボタン) を公式ドキュメントからコピペして作成してください-->
+                <button id="mobile-menu-toggle" class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-200/70 focus:ring-2 focus:ring-blue-500 cursor-pointer border-2 border-gray-200" type="button"  aria-label="Toggle navigation menu" aria-expanded="false">
+                    <!-- ハンバーガーアイコン -->
+                    <svg id="hamburger-icon" class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <!-- クローズアイコン -->
+                    <svg id="close-icon" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        
+            <!-- collapse スマホ画面では隠れるメニュー -->
+            <div class="hidden flex flex-col items-start space-y-4 py-2 md:flex md:flex-row md:space-y-0 md:justify-between md:flex-1" id="mobile-menu">
+                <!-- メニューセクション -->
+                <div class="flex flex-col items-start space-y-4 md:flex-row md:space-y-0 md:space-x-8 cursor-pointer w-full">
+                    <div class="text-white/50 hover:text-white/75">Category</div>
+                    <a href="#" class="text-white/50 hover:text-white/75">About us</a>
+                </div>
+        
+                <!-- 検索セクション -->
+                <div class="w-full">
+                    <form action="" class="space-y-2">
+                        <input type="text" placeholder="Search" class="px-3 py-2 w-full rounded-md placeholder-gray-500">
+                        <br>
+                        <input type="submit" value="Search" class="border-2 border-white text-white px-3 py-2 rounded-md hover:text-black hover:bg-white">   
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
     <main></main>
     <footer></footer>
 </body>
