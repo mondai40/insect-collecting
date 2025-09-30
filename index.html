@@ -56,5 +56,28 @@
     </header>
     <main></main>
     <footer></footer>
+    <script>
+        const toggleButton = document.getElementById("mobile-menu-toggle");
+        const hamburgerIcon = document.getElementById("hamburger-icon");
+        const closeIcon = document.getElementById("close-icon");
+        const mobileMenu = document.getElementById("mobile-menu");
+        toggleButton.addEventListener("click", () => {
+            if (hamburgerIcon.classList.contains("block")) {
+                hamburgerIcon.classList.remove("block");
+                hamburgerIcon.classList.add("hidden");
+                closeIcon.classList.remove("hidden");
+                closeIcon.classList.add("block");
+                mobileMenu.classList.remove("hidden");
+                mobileMenu.classList.add("block");
+            } else {
+                hamburgerIcon.classList.remove("hidden");
+                hamburgerIcon.classList.add("block");
+                closeIcon.classList.remove("block");
+                closeIcon.classList.add("hidden");
+                mobileMenu.classList.remove("block");
+                mobileMenu.classList.add("hidden");
+            }
+        });
+    </script>
 </body>
 </html>
