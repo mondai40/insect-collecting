@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Font Awesome の読み込み -->
-    <link href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" rel="stylesheet" />
 
     <!-- Tailwind CSS の読み込み -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome の読み込み -->
+    <link href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" rel="stylesheet" />
+
     <title>Insect Collecting</title>
 </head>
 <body>
@@ -39,7 +40,16 @@
             <div class="hidden flex flex-col items-start space-y-4 py-2 md:flex md:flex-row md:space-y-0 md:justify-between md:flex-1" id="mobile-menu">
                 <!-- メニューセクション -->
                 <div class="flex flex-col items-start space-y-4 md:flex-row md:space-y-0 md:space-x-8 cursor-pointer w-full">
-                    <div class="text-white/50 hover:text-white/75">Category</div>
+                    <details class="w-full" id="categoryMenu">
+                        <summary class="text-white/50 hover:text-white/75 flex flex-row items-center gap-1 mb-2">Category<svg class="w-4 h-4" viewBox="0 0 16 16" fill="currentColor"><path d="M8 11L3 5h10l-5 6z" /></svg></summary>
+                        <div class="bg-white px-6 py-4 rounded round-md">
+                            <ul class="space-y-2">
+                                <li class="hover:bg-gray-500/5"><a href="#">Butterfly</a></li>
+                                <li class="hover:bg-gray-500/5"><a href="#">Beetle</a></li>
+                                <li class="hover:bg-gray-500/5"><a href="#">Grasshopper</a></li>
+                            </ul>
+                        </div>
+                    </details>
                     <a href="#" class="text-white/50 hover:text-white/75">About us</a>
                 </div>
         
@@ -76,6 +86,16 @@
                 closeIcon.classList.add("hidden");
                 mobileMenu.classList.remove("block");
                 mobileMenu.classList.add("hidden");
+            }
+        });
+    
+        // カテゴリーのアコーディオンを閉じる処理
+        document.addEventListener('click', function(event) {
+            const details = document.getElementById('categoryMenu');
+            const isClickInside = details.contains(event.target);
+            
+            if (!isClickInside && details.open) {
+                details.open = false;
             }
         });
     </script>
